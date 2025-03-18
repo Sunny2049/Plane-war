@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <title>Three.js Plane Game</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* 移动设备样式覆盖 */
+        @media (max-width: 800px) {
+            #info {
+                padding: 5px;
+                max-width: 100%;
+                font-size: 0.8em;
+            }
+            
+            #info h1 {
+                font-size: 1.2em;
+                margin: 5px 0;
+            }
+            
+            #info p {
+                margin: 3px 0;
+            }
+            
+            /* 隐藏桌面端说明，显示移动端说明 */
+            .desktop-controls {
+                display: none;
+            }
+            
+            .mobile-controls {
+                display: block;
+            }
+        }
+        
+        /* 默认隐藏移动端说明 */
+        .mobile-controls {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div id="info">
+        <h1>Three.js Plane Game</h1>
+        <div class="desktop-controls">
+            <p>使用 WASD 或方向键控制飞机</p>
+            <p>按 SHIFT 向上飞，CTRL 向下飞</p>
+            <p>按空格键射击</p>
+            <p>按 V 键切换观察模式，Q/E 键旋转视角</p>
+            <p>自由模式下使用鼠标滚轮调整距离，上下方向键调整高度</p>
+        </div>
+        <div class="mobile-controls">
+            <p>使用左下方虚拟摇杆控制飞机</p>
+            <p>点击右下方射击按钮(🔫)发射子弹</p>
+            <p>使用右上方的↑↓按钮控制高度</p>
+            <p>点击👁️按钮切换视角模式</p>
+            <p>倾斜手机可在自由模式下旋转视角</p>
+        </div>
+        <p>击中橙色目标得10分，这是得分的唯一方式！</p>
+        <div id="score">Score: 0</div>
+    </div>
+    <div id="game-container"></div>
+
+    <!-- Three.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+    <!-- GLTFLoader for loading 3D models -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
+    <!-- Game script -->
+    <script src="game.js"></script>
+</body>
+</html> 
